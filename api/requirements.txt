@@ -1,0 +1,8 @@
+flask_cors
+requests
+Flask
+Flask-SQLAlchemy==2.4.1
+pyodbc
+Flask-OAuthlib
+pyjwt
+alembic

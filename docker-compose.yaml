@@ -1,0 +1,40 @@
+version: '3.1'
+
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./api/Dockerfile
+    command: python3 -m api.v1.app
+    # command: echo fine
+    ports:
+      - 8080:8080
+    environment:
+      - ConnectionString=Data Source=db_shop;Initial Catalog=DB_NAME;User Id=sa;Password=Shop_dev;Pooling=False;Max Pool Size=200;MultipleActiveResultSets=True
+    depends_on:
+      - sqlserver
+    volumes:
+        - api_images:/usr/src/api/v1/shop/images
+  web:
+    build:
+      context: .
+      dockerfile: ./web_client/Dockerfile
+    command: npm start --prefix /usr/src/app/web_client/shop_manager
+    # volumes:
+    #   - ./web_client:/usr/src/app/
+    ports:
+      - 80:3000
+    depends_on:
+      - api
+  sqlserver:
+    build:
+      context: .
+      dockerfile: db/Dockerfile
+    volumes:
+      - mssql_data:/opt/mssql
+
+
+volumes:
+  mssql_data:
+  api_images:
