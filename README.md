@@ -1,39 +1,12 @@
 # shop_manager v1.0 - React & Flask
 
 Easy to build Shop Manager, with this platform you can create your e-commerce solution fast.
-
-Screenshots
------------
-
-At first you get a welcome screen
-
-![shop_1](screenshots/shop_image_1.png)
-
-then you can choose if creating a new shop or access 
-your previous created account
-
-![shop_1](screenshots/shop_image_2.png)
-
-start creating a product and a category
-
-![shop_1](screenshots/shop_image_5.png) ![shop_1](screenshots/shop_image_7.png)
-![shop_1](screenshots/shop_image_8.png)
-
-Now create your shop
-
-![shop_1](screenshots/shop_image_9.png)
-![shop_1](screenshots/shop_image_11.png)
-
-And setup your account credentials
-
-![shop_1](screenshots/shop_image_12.png)
-
-Then you are ready to start placing orders
-
-![shop_1](screenshots/shop_image_18.png)
+Boost you company by selling online, create your shop in just minutes, and be visible anywhere.
 
 Features
 --------
+
+This Project tries to bring any user, a comfortable way to open a distribution channel, the most core features this tools is working on are:
 
 - Create your online Shop
 - Create Categories and Products
@@ -44,21 +17,21 @@ Features
 Requirements (development environment)
 ----------------------------------
 
+You will require Docker and docker-compose to easily build this project, please if you don't have any, install
+
 - Docker & docker-compose
 
-The Dockerfiles handle the boring stuff
+The docker-compose.yaml file will build and up three services:
 
-- Python3.8.1
-- Flask
-- SQLAlchemy
-- MicrosoftSQL Server (ODBC Driver 17 for SQL Server)
-- Npm
-- React.js
+- sqlserver: (MsSql Server container) this one masters the db running on port :1433.
+- api: (Python Flask API, Swagger docs [here](http://localhost:8080/apidocs)) this service runs on port :8080
+- web: (npm React.js): this frontend container builds the npm server and fordward it's output to :80 in your local machine
+
 
 Build Up
 --------
 
-My recomendation, first build the sqlserver, then up and build everything else
+I strongly recomend, first build the sqlserver, then up and build everything else
 
 ```
 # docker-compose up --build --force-recreate -d sqlserver
@@ -91,7 +64,7 @@ root@123:/usr/src/app# python3 -m unittest discover
 Other tools
 -----------
 
-Check the console.py in action
+Check the console.py in action, 
 Take all the services up, then...
 
 ```
@@ -148,6 +121,36 @@ User instances:
 ```
 
 take a look at the "help <command>" command for each function available.
+
+Screenshots
+-----------
+
+At first you get a welcome screen
+
+![shop_1](screenshots/shop_image_1.png)
+
+then you can choose if creating a new shop or access 
+your previous created account
+
+![shop_1](screenshots/shop_image_2.png)
+
+start creating a product and a category
+
+![shop_1](screenshots/shop_image_5.png) ![shop_1](screenshots/shop_image_7.png)
+![shop_1](screenshots/shop_image_8.png)
+
+Now create your shop
+
+![shop_1](screenshots/shop_image_9.png)
+![shop_1](screenshots/shop_image_11.png)
+
+And setup your account credentials
+
+![shop_1](screenshots/shop_image_12.png)
+
+Then you are ready to start placing orders
+
+![shop_1](screenshots/shop_image_18.png)
 
 Issues and still active Features
 ------
