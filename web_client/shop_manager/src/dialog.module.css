@@ -1,0 +1,116 @@
+:root {
+	--font: 'Baloo Tammudu 2', cursive;
+	--main_color: #1f98a1;
+}
+.start {
+	width: 100%;
+	height: 100%;
+}
+.start li {
+	list-style: none;
+	font-family: var(--font);
+}
+.start img {
+	object-fit: contain;
+	margin-left: -20px;
+	width: 100%;
+	height: 240px;
+}
+.start h1 {
+	line-height: 28px;
+}
+.start p {
+	line-height: 20px;
+}
+.start button {
+	cursor: pointer;
+	border: none;
+	margin-top: 12px;
+	width: 50%;
+	margin-left: 25%;
+	padding: 12px 24px;
+	font-size: 22px;
+	border-radius: 6px;
+	color: white;
+	outline: none;
+	background-color: var(--main_color);
+}
+.start button:hover {
+	filter: saturate(1.8);
+}
+.start button:active {
+	filter: saturate(0.8);
+}
+.welcome {
+	width: 100%;
+	height: 100%;
+}
+.welcome h1 {
+	font-family: var(--font);
+	line-height: 28px;
+}
+.welcome img {
+	width: 100%;
+	height: 280px;
+	object-fit: contain;
+}
+.welcome button {
+	cursor: pointer;
+	overflow: hidden;
+	line-height: 28px;
+	width: 100%;
+	margin-top: 12px;
+	border-radius: 4px;
+	border: none;
+	padding: 20px 24px 10px 28px;
+	font-size: 20px;
+	color: white;
+	font-family: var(--font);
+}
+.welcome button:hover {
+	filter: saturate(1.8);
+}
+.create {
+	background-color: var(--main_color);
+}
+.access {
+	background-color: blue;
+}
+
+.create_store {
+	height: 110%;
+	margin-bottom: 0px;
+	margin-left: -40px;
+	margin-top: -20px;
+	margin-right: -40px;
+	background-color: #08686f;
+}
+.create_store img {
+	width: 280px;
+	height: 280px;
+	margin-left: calc(50% - 140px);
+	margin-top: 40px;
+	border-radius: 50%;
+	margin-bottom: 30px;
+}
+.create_store h1, .create_store p{
+	line-height: 20px;
+	font-family: var(--font);
+	text-align: center;
+	color: white;
+}
+.create_store button {
+	width: 60%;
+	margin-left: 20%;
+	border-radius: 8px;
+	background-color: white;
+	border: none;
+	font-size: 22px;
+	color: #08686f;
+	padding: 12px 24px;
+	outline: none;
+	cursor: pointer;
+}
+.create_store button:hover {
+	background-color: #cdf7fa;
+}

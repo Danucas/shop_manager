@@ -1,0 +1,74 @@
+:root {
+	--font: 'Baloo Tammudu 2', cursive;
+}
+.title {
+	margin-top: -12px;
+	line-height: 30px;
+}
+.editor {
+	padding-top: 24px;
+}
+.fields {
+	max-height: 80%;
+	padding-bottom: 80px;
+	margin-bottom: 80px;
+	margin-top: 0px;
+}
+.description {
+	line-height: 24px;
+}
+.continue {
+	cursor: pointer;
+	height: 64px;
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	bottom: 84px;
+	left: 0;
+	font-size: 24px;
+	border: none;
+	outline: none;
+}
+.continue:hover {
+	filter: saturate(1.8);
+}
+.continue:active {
+	filter: saturate(0.6);
+}
+.terms {
+	display: flex;
+}
+.terms input {
+	width: 18px;
+	height: 18px;
+	margin-top: 24px;
+	margin-left: 80px;
+	width: 40px;
+}
+.terms h1 {
+	padding-top: 6px;
+	margin-left: 0;
+	font-size: 18px;
+}
+.finish {
+	font-family: var(--font);
+	cursor: pointer;
+	height: 64px;
+	width: 100%;
+	text-align: center;
+	position: absolute;
+	bottom: 120px;
+	left: 0;
+	font-size: 24px;
+	border: none;
+	outline: none;
+}
+.finish:hover {
+	filter: saturate(1.8);
+}
+.finish:active {
+	filter: saturate(0.6);
+}
+.error {
+	color: red;
+}

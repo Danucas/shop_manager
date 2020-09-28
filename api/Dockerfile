@@ -31,6 +31,8 @@ RUN ACCEPT_EULA=Y apt-get install -y mssql-server msodbcsql17 mssql-tools
 
 # copy the flask services and data models
 COPY api /usr/src/app/api
+COPY tests /usr/src/app/tests
+COPY flasgger /usr/src/app/flasgger
 COPY console.py /usr/src/app/console.py
 COPY models /usr/src/app/models
 

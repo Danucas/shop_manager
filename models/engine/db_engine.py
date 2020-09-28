@@ -6,6 +6,7 @@ DB engine, stablish connection with the MSSQL DB
 from models.base import Base, BaseModel
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
+from sqlalchemy.pool import NullPool
 import pyodbc
 
 
@@ -32,7 +33,8 @@ class DBEngine:
                 host,
                 db,
                 driver.replace(' ', '+')
-            )
+            ),
+            poolclass=NullPool
         )
 
     def reload(self):

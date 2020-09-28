@@ -6,3 +6,11 @@ pyodbc
 Flask-OAuthlib
 pyjwt
 alembic
+# flasgger
+apispec>=0.38.0
+PyYAML>=3.0
+jsonschema>=2.5.1
+six>=1.10.0
+mistune
+psycopg2-binary==2.8.4
+marshmallow

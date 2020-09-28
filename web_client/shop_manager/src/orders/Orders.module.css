@@ -1,0 +1,186 @@
+:root {
+	--main_color: #1f98a1;
+}
+.title {
+	position: absolute;
+	top: 0;
+}
+.editor {
+	position: relative;
+	overflow-x: hidden;
+	margin-top: 0;
+}
+.counter {
+	position: relative;
+	margin-top: calc(70px - 15px);
+	margin-left: 20px;
+	width: 30px;
+	height: 30px;
+	border-radius: 8px;
+	border: 1px solid rgb(197, 197, 197);
+	cursor: pointer;
+}
+.counter:hover {
+	background-color: rgb(233, 233, 233);
+}
+.counter:active {
+	background-color: rgb(223, 247, 255);
+}
+.counter h1 {
+	margin: 0;
+	padding-top: 8px;
+	width: 30px;
+	height: calc(30px - 8px);
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: rgb(189, 188, 188);
+	line-height: 30px;
+	vertical-align: middle;
+	text-align: center;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Old versions of Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently */
+}
+.products {
+	border-top: 1px solid rgba(128, 128, 128, 0.193);
+	overflow-x: hidden;
+	margin: -40px;
+	margin-top: 28px;
+	padding: 0;
+	min-height: calc(85% - 62px);
+	max-height: calc(85% - 62px);
+	overflow-y: scroll;
+}
+.products::-webkit-scrollbar {
+	width: 6px;
+	height: 0px;
+	background-color: rgb(233, 239, 250);
+}
+.products::-webkit-scrollbar-thumb {
+	background-color: #5d024e;
+	border-radius: 4px;
+}
+.product_card {
+	cursor: pointer;
+	height: 140px;
+	max-height: 140px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 70px calc(100% - 70px - 140px) 100px;
+	border-bottom: 1px solid rgba(128, 128, 128, 0.213);
+}
+.product_card:hover {
+	background-color: rgb(242, 242, 242);
+}
+.description {
+	padding-top: 30px;
+	padding-left: 30px;
+}
+.description h1 {
+	color: grey;
+	font-size: 22px;
+	line-height: 24px;
+}
+.image img{
+	margin-top: 20px;
+	margin-right: 80px;
+	width: 100px;
+	height: 100px;
+	border: 1px solid rgba(128, 128, 128, 0.207);
+	border-radius: 12px;
+}
+.total {
+	height: 72px;
+	width: 100%;
+	bottom: 120px;
+	position: absolute;
+	left: 0;
+	z-index: 100;
+	background-color: rgb(153, 153, 153);
+}
+.total:hover {
+	background-color: var(--main_color);
+}
+.total h1 {
+	margin: 0;
+	color: rgb(255, 255, 255);
+	text-align: center;
+	cursor: pointer;
+	padding-top: 10px;
+}
+.total h2 {
+	margin: 0;
+	top: 0;
+	right: 0;
+	position: absolute;
+	width: 70px;
+	height: 70px;
+	background-color: rgb(255, 255, 255);
+	clip-path: polygon(33% 20%, 66% 50%, 33% 80%, 29% 76%, 56% 50%, 29% 24%);
+}
+.clear {
+	cursor: pointer;
+	position: absolute;
+	width: 100px;
+	top: 0;
+	right: 40px;
+	text-align: center;
+	font-size: 20px;
+	padding: 12px 24px;
+	border-radius: 12px;
+	border: none;
+	outline: none;
+}
+.clear:hover {
+	background-color: red;
+	color: white;
+}
+.clear:active {
+	background-color: rgb(148, 32, 32);
+}
+
+.order_card {
+	display: flex;
+	min-height: 100px;
+	max-height: 100px;
+	position: relative;
+	border-bottom: 1px solid rgba(177, 177, 177, 0.535);
+}
+.description h5{
+	margin-top: -10px;
+	line-height: 20px;
+	font-size: 16px;
+}
+.description h4{
+	margin-top: -24px;
+	font-size: 20px;
+	line-height: 28px;
+}
+.description h2{
+	margin-top: -20px;
+	color: grey;
+	font-size: 16px;
+	line-height: 16px;
+}
+.total_cont {
+	position: absolute;
+	width: 20%;
+	height: calc(100% - 40px);
+	right: 0;
+	text-align: left;
+	padding-left: 0px;
+	padding-top: 14px;
+}
+.total_cont h2 {
+	position: absolute;
+	top: 25%;
+	right: 0;
+	height: 30%;
+	width: 30%;
+	background-color: rgb(201, 201, 201);
+	clip-path: polygon(33% 20%, 66% 50%, 33% 80%, 29% 76%, 56% 50%, 29% 24%);
+}

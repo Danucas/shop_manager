@@ -1,22 +1,27 @@
-#/usr/local/bin/python3
+#!/usr/local/bin/python3
 """
 Shop Shell used to manage and debug the DBEngine behavior
 """
 
-import cmd, sys
+import cmd
+import sys
 from models import storage
 from models.user import User
 from models.product import Product
 from models.category import Category
 from models.shop import Shop
 from models.auth import CachedUser
+from models.order import Order
+from models.client import Client
 
 classes = {
     'User': User,
     'Product': Product,
     'Category': Category,
     'Shop': Shop,
-    'CachedUser': CachedUser
+    'CachedUser': CachedUser,
+    'Order': Order,
+    'Client': Client
 }
 
 
@@ -28,20 +33,27 @@ class ShopShell(cmd.Cmd):
     prompt = '(shpmngr) '
     file = None
 
+    def session_close(self):
+        """
+        close the DBEngine session
+        """
+        storage.close()
+
     def do_all(self, arg):
         """
         all <Class>
-        Show all instances from the specified class in arg
+        Show all instances by <Class>
         """
         print("{} instances:".format(arg))
         all_instances = storage.all(classes[arg]).values()
         for inst in all_instances:
             print(inst.id)
+        storage.close()
 
     def do_create(self, arg):
         """
         create <Class> <attr:value> <attr:value>
-        create a new intance for the given class
+        create a new intance for the given <Class>
         """
         args = parse(arg)
         if len(args) < 2:
@@ -55,12 +67,13 @@ class ShopShell(cmd.Cmd):
                 setattr(newInstance, att, value)
                 print(att, value)
             newInstance.save()
+        storage.close()
         storage.reload()
 
     def do_show(self, arg):
         """
         show <Class> <instance.id>
-        Show the dict reprensentation of an Instances of the given class
+        Show the dict reprensentation of an Instances of the given <Class> by id
         """
         args = parse(arg)
         if len(args) < 2:
@@ -68,6 +81,7 @@ class ShopShell(cmd.Cmd):
         else:
             print(args)
             print(storage.get(classes[args[0]], args[1]).to_dict())
+        storage.close()
 
     def do_ex(self, arg):
         """
@@ -82,6 +96,7 @@ class ShopShell(cmd.Cmd):
             clsObj = storage.get(classes[args[0]], args[1])
             f = getattr(clsObj, args[2])
             print(f)
+        storage.close()
 
     def do_delete_all(self, arg):
         """
@@ -99,6 +114,7 @@ class ShopShell(cmd.Cmd):
                 storage.reload()
             except Exception as e:
                 print(e)
+        storage.close()
 
     def do_exit(self, arg):
         """
@@ -122,6 +138,7 @@ class ShopShell(cmd.Cmd):
         print('db_shop TABLES:')
         print(classes.keys())
 
+
 def parse(arg):
     """
     Parse the argument string
@@ -131,4 +148,3 @@ def parse(arg):
 if __name__ == '__main__':
     storage.reload()
     ShopShell().cmdloop()
-
