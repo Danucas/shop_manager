@@ -4,7 +4,7 @@ Defines a product object
 """
 
 from models.base import BaseModel, Base
-from sqlalchemy import Column, Integer,String, ForeignKey
+from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from models.category import Category
 
@@ -16,8 +16,11 @@ class Product(BaseModel, Base):
     __tablename__ = 'products'
     title = Column(String(64), nullable=False)
     description = Column(String(128), nullable=False)
-    price = Column(Integer, default=0)
-    category = Column(String(64), ForeignKey('categories.id'), nullable=True)
+    price = Column(String(10), default=0)
+    category = Column(
+        String(64),
+        ForeignKey('categories.id', ondelete='CASCADE'),
+        nullable=True)
     image = Column(String(256), nullable=True)
 
     def __init__(self, *args, **kwargs):

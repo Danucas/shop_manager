@@ -17,6 +17,7 @@ app_auth = Blueprint(
     url_prefix='/api/auth'
 )
 
+
 def token_required(f):
     @wraps(f)
     def decorated(*args, **kwargs):
@@ -33,7 +34,9 @@ def token_required(f):
         except Exception as e:
             traceback.print_exc()
             print(e)
-            return jsonify({'message': 'Token is invalid', 'type': 'error'}), 401
+            return jsonify({
+                'message': 'Token is invalid',
+                'type': 'error'}), 401
         return f(*args, **kwargs)
 
     return decorated

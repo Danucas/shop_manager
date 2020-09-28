@@ -1,0 +1,59 @@
+:root {
+	--main_color: #1f98a1;
+	--card-height: 180px;
+	--font: 'Baloo Tammudu 2', cursive;
+}
+.cont {
+	position: absolute;
+	top: 100px;
+	width: calc(380px - 40px);
+	left: calc(50% - 190px);
+	padding: 20px;
+	background-color: white;
+	border-radius: 8px;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.316);
+}
+.message {
+	font-family: var(--font);
+	color: grey;
+	text-align: center;
+	font-weight: lighter;
+	font-size: 20px;
+	line-height: 24px;
+	margin: 20px;
+	margin-bottom: 40px;
+}
+.yes{
+	font-family: var(--font);
+	font-size: 20px;
+	line-height: 32px;
+	padding: 16px 32px 8px 32px;
+	cursor: pointer;
+	margin-left: 24px;
+	border: none;
+	border-radius: 12px;
+	outline: none;
+	color: white;
+	background-color: var(--main_color);
+}
+.yes:hover{
+	filter: saturate(1.8);
+}
+
+.no{
+	outline: none;
+	font-family: var(--font);
+	font-size: 20px;
+	line-height: 32px;
+	padding: 16px 32px 8px 32px;
+	cursor: pointer;
+	margin-left: 80px;
+	border: none;
+	border-radius: 12px;
+	color: rgb(177, 177, 177);
+	background-color: rgb(214, 214, 214);
+}
+.no:hover{
+	background-color: red;
+	color: white;
+}

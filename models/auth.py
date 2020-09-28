@@ -5,7 +5,7 @@ Defines a category object
 
 import models
 from models.base import BaseModel, Base
-from sqlalchemy import Column, Integer,String, ForeignKey, Text
+from sqlalchemy import Column, Integer, String, ForeignKey, Text
 from sqlalchemy.orm import relationship
 
 

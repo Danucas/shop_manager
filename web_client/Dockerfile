@@ -1,5 +1,5 @@
 # pull from node
-FROM node:10.22.1-buster-slim
+FROM node:14.11.0-stretch
 
 # set working directory
 WORKDIR /usr/src/app

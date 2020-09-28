@@ -15,3 +15,5 @@ app_shop = Blueprint(
 
 from api.v1.shop.categories import *
 from api.v1.shop.products import *
+from api.v1.shop.orders import *
+from api.v1.shop.shop import *

@@ -2,4 +2,3 @@
 """
 Authorization Module
 """
-
