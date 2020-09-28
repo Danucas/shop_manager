@@ -59,6 +59,15 @@ to test the DBEngine run the unittest
 
 $ sudo docker exec -it shop_manager_api_1 bash
 root@123:/usr/src/app# python3 -m unittest discover
+Driver:
+ODBC Driver 17 for SQL Server
+....{'665fbf1d-874e-4b8b-8122-d62fbacd0ac1': 3}
+.....
+----------------------------------------------------------------------
+Ran 9 tests in 0.381s
+
+OK
+root@123:/usr/src/app#
 ```
 
 Other tools
@@ -160,7 +169,7 @@ issues:
 - Products images persistance fails
 - Login in WebApp needs a fix, may be due to a db_data persistance issue
 - Authorization flow need to redirect when the component receives an error code from the API
-- 
+- Needs implementation to handle migrations
 
 active development features:
 
